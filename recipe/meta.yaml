@@ -1,5 +1,5 @@
 {% set name = "cleopatra" %}
-{% set version = "0.1.0" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/MAfarrag/cleopatra/archive/{{ version }}.tar.gz
-  sha256: 1c59d6e8d0826f25cfadc5dab2e8582a14fae224dfb12502f784172cc9b6ac55
+  sha256: ab6c701bda6498d6ac28c1d72fe13c75d8a68cf91087a44137217ef8954e0ffe
 
 build:
   number: 0
@@ -23,11 +23,6 @@ requirements:
     - pip >=21.3.1
     - numpy >=1.21.2,<1.22.4
     - matplotlib-base >=3.4.2,<3.6.0
-    - geopandas >=0.10.2
-    - gdal >=3.3.3,<3.5.1
-    - pyramids >=0.1.1
-    - statista >=0.1.0
-    - geoplot >=0.5.1
 
 test:
   imports:
