@@ -1,5 +1,5 @@
 {% set name = "cleopatra" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/MAfarrag/cleopatra/archive/{{ version }}.tar.gz
-  sha256: 28e7702d82e475256b94403eca80032a68b388901726e435f6eabec79524ea2d
+  sha256: a313a4380eea99acc30f15ffc92edf0fb84912f26b5e8bf314448fbca314cdc0
 
 build:
   number: 0
