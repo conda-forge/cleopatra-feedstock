@@ -1,5 +1,5 @@
 {% set name = "cleopatra" %}
-{% set version = "0.2.3.post1" %}
+{% set version = "0.2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/MAfarrag/cleopatra/archive/{{ version }}.tar.gz
-  sha256: a313a4380eea99acc30f15ffc92edf0fb84912f26b5e8bf314448fbca314cdc0
+  sha256: 9c0d1cad9ea354a83dda11f3135d9227e42576468a7c6c4be34ed2fe265c81ba
 
 build:
   number: 0
@@ -17,12 +17,12 @@ build:
 requirements:
   host:
     - python  >=3.9,<3.12
-    - pip >=22.2.2
+    - pip >=22.3.1
     - poetry >=1.1.15
   run:
     - python  >=3.9,<3.12
-    - pip >=22.2.2
-    - numpy >=1.23.0
+    - pip >=22.3.1
+    - numpy =1.23.5
     - matplotlib >=3.5.3
 
 test:
