@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/MAfarrag/cleopatra/archive/{{ version }}.tar.gz
-  sha256: B17CD7AA19EE12A9337575A9B25772E3BA88F77165A98E3FD52DBD73987B3DE6
+  sha256: b17cd7aa19ee12a9337575a9b25772e3ba88f77165a98e3fd52dbd73987b3de6
 
 build:
   number: 0
