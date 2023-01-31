@@ -1,5 +1,5 @@
 {% set name = "cleopatra" %}
-{% set version = "0.2.5" %}
+{% set version = "0.2.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/MAfarrag/cleopatra/archive/{{ version }}.tar.gz
-  sha256: 89f937f8973e4a2159c600e59d5e052d7b189f7ef97fb00ac3cce623c82a7552
+  sha256: B17CD7AA19EE12A9337575A9B25772E3BA88F77165A98E3FD52DBD73987B3DE6
 
 build:
   number: 0
@@ -24,6 +24,7 @@ requirements:
     - pip >=22.3.1
     - numpy =1.23.5
     - matplotlib >=3.6.2
+    - serapeum_utils >=0.1.1
 
 test:
   imports:
