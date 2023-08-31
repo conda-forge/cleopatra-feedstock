@@ -1,5 +1,5 @@
 {% set name = "cleopatra" %}
-{% set version = "0.3.4" %}
+{% set version = "0.3.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/MAfarrag/cleopatra/archive/{{ version }}.tar.gz
-  sha256: a64e877dcdd071d204b9a31a5a4d4b754463520b97e32d867b5c9f93b0bfbcfc
+  sha256: c654b4c9eb4a5145a6384df6de2399f2a3703ced142819bc687546283257280b
 
 build:
   number: 0
@@ -16,14 +16,14 @@ build:
 
 requirements:
   host:
-    - python  >=3.9,<3.11
-    - pip >=22.3.1
+    - python  >=3.11
+    - pip >=23.2.1
   run:
-    - python  >=3.9,<3.11
-    - pip >=22.3.1
-    - numpy =1.24.1
-    - matplotlib >=3.6.2
-    - hpc >=0.1.1
+    - python  >=3.11
+    - pip >=23.2.1
+    - numpy =1.25.2
+    - matplotlib >=3.7.2
+    - hpc >=0.1.2
     - ffmpeg-python
 
 test:
