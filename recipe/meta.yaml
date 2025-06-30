@@ -1,6 +1,6 @@
-{% set python_min = '3.12' %}
+{% set python_min = "3.12" %}
 {% set name = "cleopatra" %}
-{% set version = "0.5.1" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/MAfarrag/cleopatra/archive/{{ version }}.tar.gz
-  sha256: 72bda48d8108a2500955e6f9c554336ced4c269fd0a7c006525fe023fcefda3c
+  sha256: 85467f84a3f501a44cc67fdacd7ced2797dd3e28edd7fab93b6f57a4bd8421cd
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
