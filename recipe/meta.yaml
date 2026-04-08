@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/MAfarrag/cleopatra/archive/{{ version }}.tar.gz
+  url: https://github.com/serapeum-org/cleopatra/archive/{{ version }}.tar.gz
   sha256: 85467f84a3f501a44cc67fdacd7ced2797dd3e28edd7fab93b6f57a4bd8421cd
 
 build:
@@ -33,16 +33,16 @@ test:
     - cleopatra
 
 about:
-  home: https://github.com/MAfarrag/cleopatra
+  home: https://github.com/serapeum-org/cleopatra
   license: GPL-3.0-only
   license_family: GPL
   license_file: LICENSE.md
   summary: matplotlib utility package
   description: |
     matplotlib utility package.
-  dev_url: https://github.com/MAfarrag/cleopatra
-  doc_url: https://cleopatra.readthedocs.io/
-  doc_source_url: https://github.com/MAfarrag/cleopatra/main/README.md
+  dev_url: https://github.com/serapeum-org/cleopatra
+  doc_url: https://serapeum-org.github.io/cleopatra/latest/
+  doc_source_url: https://github.com/serapeum-org/cleopatra/main/README.md
 
 extra:
   recipe-maintainers:
