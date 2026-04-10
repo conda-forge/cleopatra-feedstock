@@ -7,13 +7,15 @@ Home: https://github.com/serapeum-org/cleopatra
 
 Package license: GPL-3.0-only
 
-Summary: matplotlib utility package
+Summary: matplotlib utility package for visualizing arrays, unstructured meshes, and statistical histograms
 
 Development: https://github.com/serapeum-org/cleopatra
 
 Documentation: https://serapeum-org.github.io/cleopatra/latest/
 
-matplotlib utility package.
+Cleopatra is a matplotlib utility package for visualizing 2D/3D numpy arrays,
+unstructured meshes, and statistical histograms. It targets scientific and
+research users working with geospatial and raster data.
 
 
 Current build status
