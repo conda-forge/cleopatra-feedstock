@@ -1,6 +1,6 @@
 {% set python_min = "3.11" %}
 {% set name = "cleopatra" %}
-{% set version = "0.7.0" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/serapeum-org/cleopatra/archive/{{ version }}.tar.gz
-  sha256: a071bf64bb98800b5467877b1f61a202a4741c923fcd22755c6287fdaf8b7d73
+  sha256: 931e448b884a7fb045b4e23f75396f323a5e82865fb0840cee9d5a5100b02364
 
 build:
   number: 0
@@ -27,11 +27,41 @@ requirements:
     - matplotlib >=3.8.4
     - ffmpeg-python
 
+  run_constrained:
+    # ``tiles`` extra — web-tile basemap support (`cleopatra.tiles.add_tiles`).
+    # Advertised here so conda knows the compatible versions; installed only
+    # when you pull in the ``cleopatra-tiles`` output below.
+    - mercantile >=1.2.1
+    - pillow >=12.1.1
+    - pyproj >=3.7.2
+    - xyzservices >=2026.3.0
+
 test:
   requires:
     - python {{ python_min }}
   imports:
     - cleopatra
+
+outputs:
+  - name: {{ name }}
+
+  - name: {{ name }}-tiles
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage(name, exact=True) }}
+        - mercantile >=1.2.1
+        - pillow >=12.1.1
+        - pyproj >=3.7.2
+        - xyzservices >=2026.3.0
+    test:
+      imports:
+        - cleopatra
+        - cleopatra.tiles
+      commands:
+        # the whole point of this output is that the tiles deps are present
+        - python -c "import mercantile, pyproj, xyzservices; import PIL"
 
 about:
   home: https://github.com/serapeum-org/cleopatra
@@ -43,6 +73,10 @@ about:
     Cleopatra is a matplotlib utility package for visualizing 2D/3D numpy arrays,
     unstructured meshes, and statistical histograms. It targets scientific and
     research users working with geospatial and raster data.
+
+    The ``cleopatra-tiles`` output adds the optional web-tile basemap
+    dependencies (mercantile, pillow, pyproj, xyzservices) used by
+    ``cleopatra.tiles.add_tiles``.
   dev_url: https://github.com/serapeum-org/cleopatra
   doc_url: https://serapeum-org.github.io/cleopatra/latest/
   doc_source_url: https://github.com/serapeum-org/cleopatra/main/README.md
