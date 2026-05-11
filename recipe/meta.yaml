@@ -13,7 +13,10 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  # plain `python` (not `{{ PYTHON }}`): with `outputs:`, conda-build
+  # re-renders the top-level `build:` in a minimal jinja context where
+  # `PYTHON` is undefined.
+  script: python -m pip install . -vv
 
 requirements:
   host:
