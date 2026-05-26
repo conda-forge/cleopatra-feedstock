@@ -27,7 +27,7 @@ requirements:
     - python >={{ python_min }}
     - numpy >=2.0.0
     - hpc >=0.1.4
-    - matplotlib >=3.8.4
+    - matplotlib >=3.9
     - ffmpeg-python
 
   run_constrained:
