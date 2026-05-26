@@ -17,6 +17,10 @@ Cleopatra is a matplotlib utility package for visualizing 2D/3D numpy arrays,
 unstructured meshes, and statistical histograms. It targets scientific and
 research users working with geospatial and raster data.
 
+The ``cleopatra-tiles`` output adds the optional web-tile basemap
+dependencies (mercantile, pillow, pyproj, xyzservices) used by
+``cleopatra.tiles.add_tiles``.
+
 
 Current build status
 ====================
@@ -25,7 +29,9 @@ Current build status
 <table><tr>
     <td>All platforms:</td>
     <td>
-      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
+      <a href="https://github.com/conda-forge/cleopatra-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/cleopatra-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
     </td>
   </tr>
 </table>
@@ -36,6 +42,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cleopatra-green.svg)](https://anaconda.org/conda-forge/cleopatra) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cleopatra.svg)](https://anaconda.org/conda-forge/cleopatra) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cleopatra.svg)](https://anaconda.org/conda-forge/cleopatra) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cleopatra.svg)](https://anaconda.org/conda-forge/cleopatra) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-cleopatra--tiles-green.svg)](https://anaconda.org/conda-forge/cleopatra-tiles) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cleopatra-tiles.svg)](https://anaconda.org/conda-forge/cleopatra-tiles) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cleopatra-tiles.svg)](https://anaconda.org/conda-forge/cleopatra-tiles) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cleopatra-tiles.svg)](https://anaconda.org/conda-forge/cleopatra-tiles) |
 
 Installing cleopatra
 ====================
@@ -47,16 +54,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `cleopatra` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `cleopatra, cleopatra-tiles` can be installed with `conda`:
 
 ```
-conda install cleopatra
+conda install cleopatra cleopatra-tiles
 ```
 
 or with `mamba`:
 
 ```
-mamba install cleopatra
+mamba install cleopatra cleopatra-tiles
 ```
 
 It is possible to list all of the versions of `cleopatra` available on your platform with `conda`:
