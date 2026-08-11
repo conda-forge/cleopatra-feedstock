@@ -1,6 +1,6 @@
 {% set python_min = "3.11" %}
 {% set name = "cleopatra" %}
-{% set version = "0.29.0" %}
+{% set version = "0.30.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/serapeum-org/cleopatra/archive/{{ version }}.tar.gz
-  sha256: 8abe474b47a6b289f20292762381cfaaafdd64a93c2888e1e004eaa43453cbdb
+  sha256: b15eb3111650bc81be9af099b3c7da5e84fd8d5612124994c7e2ed3ce71d5d34
 
 build:
   number: 0
@@ -28,21 +28,26 @@ requirements:
     - numpy >=2.0.0
     - hpc >=0.1.4
     - matplotlib >=3.9
+    - pillow >=12.1.1
     - imageio-ffmpeg >=0.4.9
 
   run_constrained:
     # ``tiles`` extra — web-tile basemap support (`cleopatra.tiles.add_tiles`).
     # Advertised here so conda knows the compatible versions; installed only
     # when you pull in the ``cleopatra-tiles`` output below.
-    - pillow >=12.1.1
     - pyproj >=3.7.2
     - xyzservices >=2026.3.0
+    # ``science-colors`` extra — namespaced scientific colormaps (cmocean:*,
+    # cmasher:*, ...) resolved lazily via the numpy-only ``cmap`` aggregator.
+    # Installed only when you pull in the ``cleopatra-science-colors`` output.
+    - cmap >=0.7.2
 
 test:
   requires:
     - python {{ python_min }}
   imports:
     - cleopatra
+    - PIL
 
 outputs:
   - name: {{ name }}
@@ -53,7 +58,6 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage(name, exact=True) }}
-        - pillow >=12.1.1
         - pyproj >=3.7.2
         - xyzservices >=2026.3.0
     test:
@@ -62,7 +66,21 @@ outputs:
         - cleopatra.tiles
       commands:
         # the whole point of this output is that the tiles deps are present
-        - python -c "import pyproj, xyzservices; import PIL"
+        - python -c "import pyproj, xyzservices"
+
+  - name: {{ name }}-science-colors
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage(name, exact=True) }}
+        - cmap >=0.7.2
+    test:
+      imports:
+        - cleopatra
+      commands:
+        # the whole point of this output is that the science-colors dep is present
+        - python -c "import cmap"
 
 about:
   home: https://github.com/serapeum-org/cleopatra
@@ -76,8 +94,9 @@ about:
     research users working with geospatial and raster data.
 
     The ``cleopatra-tiles`` output adds the optional web-tile basemap
-    dependencies (pillow, pyproj, xyzservices) used by
-    ``cleopatra.tiles.add_tiles``.
+    dependencies (pyproj, xyzservices) used by ``cleopatra.tiles.add_tiles``.
+    The ``cleopatra-science-colors`` output adds ``cmap``, used to resolve
+    namespaced scientific colormaps (cmocean:*, cmasher:*, ...).
   dev_url: https://github.com/serapeum-org/cleopatra
   doc_url: https://serapeum-org.github.io/cleopatra/latest/
   doc_source_url: https://github.com/serapeum-org/cleopatra/main/README.md
