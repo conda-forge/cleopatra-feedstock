@@ -18,7 +18,7 @@ unstructured meshes, and statistical histograms. It targets scientific and
 research users working with geospatial and raster data.
 
 The ``cleopatra-tiles`` output adds the optional web-tile basemap
-dependencies (mercantile, pillow, pyproj, xyzservices) used by
+dependencies (pillow, pyproj, xyzservices) used by
 ``cleopatra.tiles.add_tiles``.
 
 
@@ -54,31 +54,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `cleopatra, cleopatra-tiles` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install cleopatra cleopatra-tiles
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install cleopatra cleopatra-tiles
 ```
 
-It is possible to list all of the versions of `cleopatra` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add cleopatra cleopatra-tiles
+# for installing globally
+pixi global install cleopatra cleopatra-tiles
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `cleopatra` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search cleopatra --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search cleopatra --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search cleopatra --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -90,6 +132,8 @@ mamba repoquery whoneeds cleopatra --channel conda-forge
 # List dependencies of `cleopatra`:
 mamba repoquery depends cleopatra --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
