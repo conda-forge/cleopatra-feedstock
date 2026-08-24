@@ -32,7 +32,7 @@ requirements:
     - imageio-ffmpeg >=0.4.9
 
   run_constrained:
-    # ``tiles`` extra — web-tile basemap support (`cleopatra.tiles.add_tiles`).
+    # ``tiles`` extra — web-tile basemap support (`cleopatra.basemap.tiles.add_tiles`).
     # Advertised here so conda knows the compatible versions; installed only
     # when you pull in the ``cleopatra-tiles`` output below.
     - pyproj >=3.7.2
@@ -94,7 +94,7 @@ about:
     research users working with geospatial and raster data.
 
     The ``cleopatra-tiles`` output adds the optional web-tile basemap
-    dependencies (pyproj, xyzservices) used by ``cleopatra.tiles.add_tiles``.
+    dependencies (pyproj, xyzservices) used by ``cleopatra.basemap.tiles.add_tiles``.
     The ``cleopatra-science-colors`` output adds ``cmap``, used to resolve
     namespaced scientific colormaps (cmocean:*, cmasher:*, ...).
   dev_url: https://github.com/serapeum-org/cleopatra
