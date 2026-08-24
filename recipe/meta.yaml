@@ -63,7 +63,7 @@ outputs:
     test:
       imports:
         - cleopatra
-        - cleopatra.tiles
+        - cleopatra.basemap.tiles
       commands:
         # the whole point of this output is that the tiles deps are present
         - python -c "import pyproj, xyzservices"
