@@ -18,8 +18,9 @@ unstructured meshes, and statistical histograms. It targets scientific and
 research users working with geospatial and raster data.
 
 The ``cleopatra-tiles`` output adds the optional web-tile basemap
-dependencies (pillow, pyproj, xyzservices) used by
-``cleopatra.tiles.add_tiles``.
+dependencies (pyproj, xyzservices) used by ``cleopatra.basemap.tiles.add_tiles``.
+The ``cleopatra-science-colors`` output adds ``cmap``, used to resolve
+namespaced scientific colormaps (cmocean:*, cmasher:*, ...).
 
 
 Current build status
@@ -42,6 +43,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cleopatra-green.svg)](https://anaconda.org/conda-forge/cleopatra) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cleopatra.svg)](https://anaconda.org/conda-forge/cleopatra) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cleopatra.svg)](https://anaconda.org/conda-forge/cleopatra) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cleopatra.svg)](https://anaconda.org/conda-forge/cleopatra) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-cleopatra--science--colors-green.svg)](https://anaconda.org/conda-forge/cleopatra-science-colors) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cleopatra-science-colors.svg)](https://anaconda.org/conda-forge/cleopatra-science-colors) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cleopatra-science-colors.svg)](https://anaconda.org/conda-forge/cleopatra-science-colors) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cleopatra-science-colors.svg)](https://anaconda.org/conda-forge/cleopatra-science-colors) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cleopatra--tiles-green.svg)](https://anaconda.org/conda-forge/cleopatra-tiles) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cleopatra-tiles.svg)](https://anaconda.org/conda-forge/cleopatra-tiles) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cleopatra-tiles.svg)](https://anaconda.org/conda-forge/cleopatra-tiles) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cleopatra-tiles.svg)](https://anaconda.org/conda-forge/cleopatra-tiles) |
 
 Installing cleopatra
@@ -61,7 +63,7 @@ How to use
 <summary>With conda</summary>
 
 ```
-conda install cleopatra cleopatra-tiles
+conda install cleopatra cleopatra-science-colors cleopatra-tiles
 ```
 
 </details>
@@ -70,7 +72,7 @@ conda install cleopatra cleopatra-tiles
 <summary>With mamba</summary>
 
 ```
-mamba install cleopatra cleopatra-tiles
+mamba install cleopatra cleopatra-science-colors cleopatra-tiles
 ```
 
 </details>
@@ -80,9 +82,9 @@ mamba install cleopatra cleopatra-tiles
 
 ```
 # for adding to your local project
-pixi add cleopatra cleopatra-tiles
+pixi add cleopatra cleopatra-science-colors cleopatra-tiles
 # for installing globally
-pixi global install cleopatra cleopatra-tiles
+pixi global install cleopatra cleopatra-science-colors cleopatra-tiles
 ```
 
 </details>
