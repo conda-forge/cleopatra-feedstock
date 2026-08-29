@@ -1,6 +1,6 @@
 {% set python_min = "3.11" %}
 {% set name = "cleopatra" %}
-{% set version = "0.32.0" %}
+{% set version = "0.35.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/serapeum-org/cleopatra/archive/{{ version }}.tar.gz
-  sha256: 1735580997b208a56e39a1ee727baf2877a23af5ee69674e74619ba3a3680f13
+  sha256: 9714979621a5b72bc127ddc1c48f8f91f8be20c8f93ba46dc5b5be3c686430e0
 
 build:
   number: 0
