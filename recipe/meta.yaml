@@ -29,7 +29,7 @@ requirements:
     - hpc >=0.1.4
     - matplotlib >=3.9
     - pillow >=12.1.1
-    - imageio-ffmpeg >=0.4.9
+    - imageio-ffmpeg >=0.6.0
 
   run_constrained:
     # ``tiles`` extra — web-tile basemap support (`cleopatra.basemap.tiles.add_tiles`).
