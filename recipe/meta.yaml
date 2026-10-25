@@ -1,6 +1,6 @@
 {% set python_min = "3.11" %}
 {% set name = "cleopatra" %}
-{% set version = "0.42.0" %}
+{% set version = "0.43.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/serapeum-org/cleopatra/archive/{{ version }}.tar.gz
-  sha256: fa1104146528948064814b2d1e130cbff32a28be6a3f3fcffd26506b3f9901b8
+  sha256: 6b19bdd9396f448ddac1669deddc063ab204c62c7b575e8ce3e8ae269470a4f9
 
 build:
   number: 0
@@ -28,7 +28,7 @@ requirements:
     - numpy >=2.0.0
     - hpc >=0.1.4
     - matplotlib >=3.11
-    - pillow >=12.1.1
+    - pillow >=13.0.0
     - imageio-ffmpeg >=0.6.0
 
   run_constrained:
